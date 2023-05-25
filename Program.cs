@@ -78,8 +78,8 @@ mensaje = temperatura switch
     >= 39 and < 43 => "Debes ir al medico"
 };
 
-Console.WriteLine(mensaje);
-Console.WriteLine("FIN");
+//Console.WriteLine(mensaje);
+//Console.WriteLine("FIN");
 
 var hoy = DateTime.Today;
 
@@ -92,5 +92,94 @@ var estacion = hoy.Month switch
     _ => throw new ApplicationException("Mes incorrecto")
 };
 
-Console.WriteLine(estacion); 
+//Console.WriteLine(estacion);
 
+// ========================================== BUCLES ============================================
+
+int contador = 1;
+
+/*while(contador <= 10)
+{
+    Console.WriteLine(contador);
+    contador++;
+};*/
+
+var balance = 200m;
+var interes = 1.07m;
+var contadorInteres = 1;
+
+while(contadorInteres <= 20)
+{
+    balance *= interes;
+    contadorInteres++;
+}
+//Console.WriteLine(balance);
+
+/*do
+{
+    Console.WriteLine(contador);
+    contador++;
+} while (contador > 10);*/
+
+
+/*for(int i = 1; i <=10 ; i++)
+{
+    Console.WriteLine(i);
+}*/
+
+/*var nombre = "Jorge";
+foreach (var letra in nombre)
+{
+    Console.WriteLine(letra);
+}*/
+
+//  Break and Continue
+
+
+/*for (int i = 0; i < 10; i++)
+{
+    if (i == 5)
+    {
+        break;
+    }
+    Console.WriteLine(i);
+}
+Console.WriteLine("Fin");*/
+
+while(true) {
+    Console.WriteLine("Bienvenida a la calculadora de C#");
+    Console.Write("Escriba el primer numero");
+    var entrada = Console.ReadLine();
+    if (entrada is null)
+    {
+        Console.WriteLine("Error: Vuele a comenzar");
+        continue;
+    }
+    var num1 = decimal.Parse(entrada);
+
+    Console.Write("Escriba el segundo numero");
+    entrada = Console.ReadLine();
+
+    if (entrada is null)
+    {
+        Console.WriteLine("Error: Vuele a comenzar");
+        continue;
+    }
+
+    var num2 = decimal.Parse(entrada);
+
+    Console.WriteLine($"el resultado de sumar {num1} y {num2} es {num1 + num2}");
+
+    Console.Write("Desea sumar otra vez? (y/n)");
+    entrada = Console.ReadLine();
+
+    if (entrada != "y")
+    {
+        break;
+    }
+}
+
+Console.WriteLine("Adios!");
+
+
+// ========================================== FIN BUCLES ============================================
